@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+        fieldset {
+            border: 0;
+            vertical-align: top;
+        }
+
+        legend {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+            font-size: 0;
+            line-height: 0;
+        }
+
+        #login {
+            width: 304px;
+            height: 390px;
+            padding-top: 28px;
+            padding-bottom: 28px;
+            font-family: "Roboto", serif;
+            text-align: center;
+            border: 1px solid #000;
+        }
+
+        #login button[type="button"] {
+            width: 228px;
+            height: 44px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        #login input {
+            width: 228px;
+            height: 44px;
+            background: #eaeaea;
+            margin-bottom: 20px;
+        }
+
+        #login button[type="submit"] {
+            width: 228px;
+            height: 44px;
+            font-size: 14px;
+            color: white;
+            background: #373F3C;
+            margin-bottom: 20px;
+        }
+
+        #login a {
+            display: block;
+            text-decoration: none;
+            font-size: 14px;
+            color: #2C3432;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" id="login">
+        <filedset>
+            <legend>로그인</legend>
+            <button type="button">
+                <i class="fa-brands fa-google"></i>
+                Log in with Google
+            </button>
+        </filedset>
+        <p id="or">or</p>
+        <filedset>
+            <legend>일반 로그인</legend>
+            <!-- label 태그 빼먹지 않기 -->
+            <label for="username">
+                <input type="text" id="username" name="username" placeholder="Username">
+            </label>
+            <label for="password">
+                <input type="password" id="password" name="password" placeholder="Passsword">
+            </label>
+            <button type="submit">
+                LOGIN
+            </button>
+        </filedset>
+        <a href="#">Forgot your password?</a>
+    </form>
+</body>
+
+</html>
