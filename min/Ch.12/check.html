@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+
+<body>
+    <form action="#">
+        <filedset>
+            <legend>로그인</legend>
+            <button type="button">
+                Log in with Google
+            </button>
+        </filedset>
+        <p>or</p>
+        <filedset>
+            <legend>일반 로그인</legend>
+            <!-- label 태그 빼먹지 않기 -->
+            <label for="username">
+                <input type="text" id="username" name="username" placeholder="Username">
+            </label>
+            <label for="password">
+                <input type="password" id="password" name="password" placeholder="Passsword">
+            </label>
+            <button type="submit">
+                LOGIN
+            </button>
+        </filedset>
+        <a href="#">Forgot your password?</a>
+    </form>
+
+    <script>
+        const loginForm = document.forms[0];
+
+        loginForm.addEventListener("submit", function (e) {
+            e.preventDefault(); //이벤트 취소
+
+            const userName = loginForm.username;
+            const userValue = userName.value.trim();
+            const password = loginForm.password;
+            const passValue = password.value.trim();
+
+            if (userValue === "") {
+                alert("아이디를 입력해 주세요.");
+                userName.focus();
+                return;
+            }
+
+            if (userValue.indexOf("@") === -1) {
+                alert("아이디는 이메일 형식으로 입력해 주세요.");
+                userName.focus();
+                return;
+            }
+
+            if (passValue === "") {
+                alert("비밀번호를 입력해 주세요.");
+                password.focus();
+                return;
+            }
+
+            if (passValue.length <= 4) {
+                alert("비밀번호는 5자리 이상 입력해 주세요.");
+                password.focus();
+                return;
+            }
+
+            this.submit();
+        });
+    </script>
+</body>
+
+</html>
