@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FORM</title>
+</head>
+<body>
+    <form action="#">
+        <fieldset>
+            <legend>로그인</legend>
+            <button type="button">
+                log in with google
+            </button>
+        </fieldset>
+        <p>or</p>
+        <fieldset>
+            <legend>일반 로그인</legend>
+            <label for="username">
+                <input type="text" id="username" name="username" placeholder="Username">
+            </label>
+            <label for="password">
+                <input type="password" id="password" name="password" placeholder="Password">
+            </label>
+            <button type="submit">
+                LOGIN
+            </button>
+        </fieldset>
+        <a href="#">Forgot your password?</a>
+    </form>
+    <!-- 여기서부터... -->
+
+    <script>
+        document.forms[0].addEventListener("submit", function(e){
+            e.preventDefault();
+
+            const id = document.forms[0].username;
+            const idvalue = id.value.trim();
+            const pw = document.forms[0].password;
+            const pwvalue = pw.value.trim();
+
+            if(idvalue === ""){
+                alert("아이디를 입력해 주세요");
+                id.focus();
+                return;
+            }
+            if(idvalue.indexOf("@") === -1){
+                alert("아이디는 이메일 형식으로 입력해 주세요");
+                id.focus();
+                return;
+            }
+            if(pwvalue === ""){
+                alert("비밀번호를 입력해 주세요");
+                pw.focus();
+                return;
+            }
+            if(pwvalue.trim().length <= 4){
+                alert("비밀번호는 5자리 이상 입력해 주세요");
+                pw.focus();
+                return;
+            }
+
+            this.submit();
+        })
+    </script>
+
+</body>
+</html>
